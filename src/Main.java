@@ -89,12 +89,12 @@ public class Main extends JPanel implements MouseListener, KeyListener, MouseMot
 	private String blend1State = "empty";
 	private String blend2State = "empty";
 
-	private Rectangle blendStation1=new Rectangle (70, 540, 52, 82);
-	private Rectangle blendStation2 = new Rectangle(122, 540, 52, 82);
+	private Rectangle blendStation1=new Rectangle (69, 571, 50, 50);
+	private Rectangle blendStation2 = new Rectangle(124, 571, 50, 50);
 
-	private Rectangle cookingStation = new Rectangle (282, 558, 62, 64);
+	private Rectangle cookingStation = new Rectangle (284, 571, 50, 50);
 
-	private Rectangle cupStation=new Rectangle (250, 425, 52, 50);
+	private Rectangle cupStation=new Rectangle (250, 250, 50, 50);
 	private Rectangle trayStation=new Rectangle (350, 350, 50, 50);
 	private Rectangle servingStation=new Rectangle(450, 450, 50,50);
 	private Rectangle trashCan=new Rectangle(230,510,40,40);
@@ -133,7 +133,7 @@ public class Main extends JPanel implements MouseListener, KeyListener, MouseMot
 	private Customer orderingCustomer=null;
 	private Point[] lineSpots;//Point stores x and y coordinates
 	private int lineSpotsCount=5;//max # of customers in line
-	private Rectangle orderingStation=new Rectangle(120,310,60,70);//!v-NEEDA CHANGE COORDS!!!!!!
+	private Rectangle orderingStation=new Rectangle(120,310,55,70);//!v-NEEDA CHANGE COORDS!!!!!!
 	private int orderingFrames=0;//will be >0 when bubble visible
 
 	private Point[]waitingSpots;//waiting spots
@@ -798,7 +798,7 @@ public class Main extends JPanel implements MouseListener, KeyListener, MouseMot
 
 			// Menu button
 			g.setColor(Color.RED);
-			g.drawRect(menuButton.x, menuButton.y, menuButton.width, menuButton.height);
+			g.fillRect(menuButton.x, menuButton.y, menuButton.width, menuButton.height);
 			g.setColor(Color.WHITE);
 			g.drawString("Menu", menuButton.x + 12, menuButton.y + 25);
 			// After drawing chop stations
@@ -830,79 +830,79 @@ public class Main extends JPanel implements MouseListener, KeyListener, MouseMot
 
 			// Cooking pot
 			if (potState.equals("empty")) {
-				g.drawImage(emptyPot, 247, 500, 150, 150, this);
+				g.drawImage(emptyPot, 247, 512, 150, 150, this);
 			}
 			else if (potState.equals("uncooked1")) {
-				g.drawImage(uncookedPearl1, 247, 500, 150, 150, this);
+				g.drawImage(uncookedPearl1, 247, 512, 150, 150, this);
 			}
 			else if (potState.equals("uncooked2")) {
-				g.drawImage(uncookedPearl2, 247, 500, 150, 150, this);
+				g.drawImage(uncookedPearl2, 247, 512, 150, 150, this);
 			}
 			else if (potState.equals("cooked")) {
-				g.drawImage(pearlPot, 247, 500, 150, 150, this);
+				g.drawImage(pearlPot, 247, 512, 150, 150, this);
 			}
 
 
 			// Blender 1
 			if (blend1State.equals("empty")) {
-				g.drawImage(emptyBlender1, 50, 520, 100, 100, this);
+				g.drawImage(emptyBlender1, 45, 544, 100, 100, this);
 			}
 
 			else if (blend1State.equals("unblended1")) {
 				if ("mango".equals(blender1FinishedFruit)) {
-					g.drawImage(blendingMango1, 50, 520, 100, 100, this);
+					g.drawImage(blendingMango1, 45, 544, 100, 100, this);
 
 				}
 				else if ("lychee".equals(blender1FinishedFruit)) {
-					g.drawImage(blendingLychee1, 50, 520, 100, 100, this);
+					g.drawImage(blendingLychee1, 45, 544, 100, 100, this);
 				}
 			}
 
 			else if (blend1State.equals("unblended2")) {
 				if ("mango".equals(blender1FinishedFruit)) {
-					g.drawImage(blendingMango2, 50, 520, 100, 100, this);
+					g.drawImage(blendingMango2, 45, 544, 100, 100, this);
 				}
 				else if ("lychee".equals(blender1FinishedFruit)) {
-					g.drawImage(blendingLychee2, 50, 520, 100, 100, this);
+					g.drawImage(blendingLychee2, 45, 544, 100, 100, this);
 				}
 			}
 			else if (blend1State.equals("blended")) {
 				if ("mango".equals(blender1FinishedFruit)) {
-					g.drawImage(mangoBlender, 50, 520, 100, 100, this);
+					g.drawImage(mangoBlender, 45, 544, 100, 100, this);
 				}
 				else if ("lychee".equals(blender1FinishedFruit)) {
-					g.drawImage(lycheeBlender, 50, 520, 100, 100, this);
+					g.drawImage(lycheeBlender, 45, 544, 100, 100, this);
 				}
 			}
 
 
 			// Blender 2
 			if (blend2State.equals("empty")) {
-				g.drawImage(emptyBlender2, 105, 520, 100, 100, this);
+				g.drawImage(emptyBlender2, 100, 544, 100, 100, this);
 			}
 			else if (blend2State.equals("unblended1")) {
 				if ("mango".equals(blender2FinishedFruit)) {
-					g.drawImage(blendingMango1, 105, 520, 100, 100, this);
+					g.drawImage(blendingMango1, 100, 544, 100, 100, this);
 				}
 				else if ("lychee".equals(blender2FinishedFruit)) {
-					g.drawImage(blendingLychee1, 105, 520, 100, 100, this);
+					g.drawImage(blendingLychee1, 100, 544, 100, 100, this);
 				}
 			}
 
 			else if (blend2State.equals("unblended2")) {
 				if ("mango".equals(blender2FinishedFruit)) {
-					g.drawImage(blendingMango2, 105, 520, 100, 100, this);
+					g.drawImage(blendingMango2, 100, 544, 100, 100, this);
 				}
 				else if ("lychee".equals(blender2FinishedFruit)) {
-					g.drawImage(blendingLychee2, 105, 520, 100, 100, this);
+					g.drawImage(blendingLychee2, 100, 544, 100, 100, this);
 				}
 			}
 			else if (blend2State.equals("blended")) {
 				if ("mango".equals(blender2FinishedFruit)) {
-					g.drawImage(mangoBlender, 105, 520, 100, 100, this);
+					g.drawImage(mangoBlender, 100, 544, 100, 100, this);
 				}
 				else if ("lychee".equals(blender2FinishedFruit)) {
-					g.drawImage(lycheeBlender, 105, 520, 100, 100, this);
+					g.drawImage(lycheeBlender, 100, 544, 100, 100, this);
 				}
 			}
 
@@ -1395,13 +1395,13 @@ public class Main extends JPanel implements MouseListener, KeyListener, MouseMot
 					return;
 				}
 			}
-			if (x >= 16 && x <= 71 && y >= 380 && y <= 444) {
+			if (x >= 16 && x <= 71 && y >= 386 && y <= 444) {
 				spawnMango();
 				selectedItem=null;
 				return;
 			}
 
-			if (x>= 16 && x <= 72 && y >= 440 && y <= 505) {
+			if (x>= 16 && x <= 72 && y >= 448 && y <= 505) {
 				spawnLychee();
 				selectedItem=null;
 
@@ -1409,7 +1409,7 @@ public class Main extends JPanel implements MouseListener, KeyListener, MouseMot
 
 			}
 
-			if (x >= 16 && x <= 71 && y >= 505 && y <= 566) {
+			if (x >= 16 && x <= 71 && y >= 510 && y <= 566) {
 				spawnPearl();
 				selectedItem=null;
 
@@ -1417,7 +1417,7 @@ public class Main extends JPanel implements MouseListener, KeyListener, MouseMot
 
 			}
 
-			if (x>= 227 && x <= 282 && y >= 429 && y<= 494) {
+			if (x>= 230 && x <= 283 && y >= 439 && y<= 494) {
 				spawnPudding();
 				selectedItem=null;
 
@@ -1425,7 +1425,7 @@ public class Main extends JPanel implements MouseListener, KeyListener, MouseMot
 
 			}
 
-			if (x >= 175 && x <= 227 && y >= 425 && y <= 493) {
+			if (x >= 175 && x <= 226 && y >= 439 && y <= 493) {
 				spawnCup();
 				selectedItem=null;
 
