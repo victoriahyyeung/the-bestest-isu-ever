@@ -13,7 +13,7 @@ public class Customer {
 	private int x,y; // coordinates of customer
 	private Image avatar; // avatar of customer
 	private Order order; // customer order
-	private int patienceMax=100; // max patience
+	private int patienceMax=45; // max patience
 	private int currentPatience;// patient stored as int
 	private boolean isActive=true; // tracks if customer is still active
 	private String customerType;//orangeCat
@@ -27,8 +27,8 @@ public class Customer {
 	private int bubbleFrames;//bubble will show when >0;
 	private Clip thinking; // sound of customer
 
-	
-	 
+
+
 	private static final String[]TYPES= {"orangeCat"};
 	private static final String[] FRUITS = {"mango", "lychee"};
 	private static final String[] TOPPINGS = {"pearl", "pudding"};
@@ -117,15 +117,17 @@ public class Customer {
 			return;
 
 		String newEmo;
-		if(currentPatience>50)
+		if(state.equals("SERVED")) {
+			newEmo="happy";
+		}
+		else if(currentPatience>patienceMax/2)
 			newEmo="neutral";
-		else if(currentPatience>30)
+		else if(currentPatience>patienceMax*0.3)
 			newEmo="impatient";
 
 		else
 			newEmo="angry";
-		if(state.equals("SERVED"))
-			newEmo="happy";
+
 		if(!(newEmo.equals(currentEmotion))) {
 			currentEmotion=newEmo;
 			this.avatar=images.get(customerType).get(currentEmotion);
@@ -197,8 +199,8 @@ public class Customer {
 				else
 					x+=SPEED;// move right at constant speed
 			}
-			
-			 // Move left
+
+			// Move left
 			else {
 				if (-dx<SPEED) 
 					x=targetX; // snap if remaining distance is small
@@ -207,7 +209,7 @@ public class Customer {
 					x-=SPEED;// move left at constant speed
 			}
 		}
-		
+
 		// Move vertically toward target
 		if(dy!=0) {
 			// Move downward
@@ -284,7 +286,7 @@ public class Customer {
 		this.targetY=ty;
 		moving=true;
 	}
-	
+
 
 	// Description: Sets the customer's current state
 	// Parameters: new state ("SPAWN", "ORDERING", "WAITING", "SERVED", "LEAVING")
@@ -292,20 +294,20 @@ public class Customer {
 	public void setState(String s) {
 		this.state=s;
 	}
-	
-//<<<<<<< HEAD
+
+	//<<<<<<< HEAD
 	// Description: Sets the customer's waiting spot index after ordering
-		// Parameters: index of waiting spot
-		// Return: void
-//=======
-//>>>>>>> branch 'main' of https://github.com/victoriahyyeung/best-isu-ever.git
+	// Parameters: index of waiting spot
+	// Return: void
+	//=======
+	//>>>>>>> branch 'main' of https://github.com/victoriahyyeung/best-isu-ever.git
 	public void setWaitingSpotIndex(int i) {
 		this.waitingSpotIndex=i;
 	}
-	
+
 	// Description: Draws the customer avatar, patience bar, and ordering bubble with sound
-		// Parameters: graphics object for drawing
-		// Return: void
+	// Parameters: graphics object for drawing
+	// Return: void
 	public void draw(Graphics g) {
 		g.drawImage(avatar, x, y, null);
 		// drawing patience bar
@@ -317,7 +319,7 @@ public class Customer {
 		g.setColor(Color.BLACK);
 		g.drawRect(x, y-12, barWidth, barHeight);
 		if (bubbleFrames>0) {
-		// plays customer sound
+			// plays customer sound
 			if (!soundPlayed) {
 				thinking.setFramePosition(0);
 				thinking.start();

@@ -79,11 +79,11 @@ public class Ticket {
 		d.fill(new RoundRectangle2D.Float(x,y,width,height,15,15));
 		d.setColor(Color.BLACK);
 		d.draw(new RoundRectangle2D.Float(x,y,width,height,15,15));
-
-		if (isSelected) {//WOWOWOWOW CHANGES COLOR WHEN SELECTED!!!
-			d.setColor(Color.PINK);
-			d.fill(new RoundRectangle2D.Float(x,y,width,height,15,15));
-		}
+//
+//		if (isSelected) {//WOWOWOWOW CHANGES COLOR WHEN SELECTED!!!
+//			d.setColor(Color.PINK);
+//			d.fill(new RoundRectangle2D.Float(x,y,width,height,15,15));
+//		}
 
 		d.setFont(new Font("Times New Roman",Font.BOLD,10));
 		d.setColor(Color.BLACK);

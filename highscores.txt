@@ -1,6 +1,14 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
+Anonymous,400
 Anonymous,300
+Anonymous,200
+Anonymous,200
+Anonymous,200
+Anonymous,200
+Anonymous,200
+Anonymous,200
+Anonymous,100
+Anonymous,100
+Anonymous,100
 Anonymous,100
 Anonymous,100
 user xxxxxxx,0
@@ -17,8 +25,6 @@ Anonymous,0
 Anonymous,0
 Anonymous,0
 Anonymous,0
-=======
->>>>>>> branch 'main' of https://github.com/victoriahyyeung/best-isu-ever.git
 Anonymous,0
 Anonymous,0
 Anonymous,0
@@ -45,13 +51,26 @@ Anonymous,0
 Anonymous,0
 Anonymous,0
 Anonymous,0
-=======
-Anonymous,200
-Anonymous,200
-Anonymous,200
->>>>>>> branch 'main' of https://github.com/victoriahyyeung/best-isu-ever.git
-=======
-Anonymous,200
-Anonymous,200
-Anonymous,200
->>>>>>> branch 'main' of https://github.com/victoriahyyeung/best-isu-ever.git
+Anonymous,0
+Anonymous,0
+Anonymous,0
+Enter usernamhie:,0
+Anonymous,0
+Anonymous,0
+Anonymous,0
+Anonymous,0
+Anonymous,0
+Anonymous,0
+Anonymous,0
+Anonymous,0
+Anonymous,0
+Anonymous,0
+Anonymous,0
+Anonymous,0
+Anonymous,0
+Anonymous,0
+Anonymous,0
+Anonymous,0
+Anonymous,0
+Anonymous,0
+Anonymous,0
